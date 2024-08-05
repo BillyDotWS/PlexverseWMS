@@ -2,14 +2,12 @@ package dev.joeyfoxo.worldManagement.util;
 
 import dev.joeyfoxo.worldManagement.WorldManagement;
 import dev.joeyfoxo.worldManagement.worlds.GameType;
-import dev.joeyfoxo.worldManagement.worlds.WorldSave;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -18,7 +16,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.io.File;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
@@ -88,11 +85,13 @@ public class Util {
         return bd.doubleValue();
 
     }
+
     public static long getUsedMemory() {
         return (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024);
     }
+
     public static long getMaxMemory() {
-            return Runtime.getRuntime().maxMemory() / (1024 * 1024);
+        return Runtime.getRuntime().maxMemory() / (1024 * 1024);
     }
 
     public static boolean deleteDirectory(File directoryToBeDeleted) {

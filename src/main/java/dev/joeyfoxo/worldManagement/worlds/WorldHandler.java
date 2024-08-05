@@ -9,7 +9,6 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.entity.Player;
@@ -55,18 +54,21 @@ public class WorldHandler {
             return;
         }
 
-        if (worldSave.world() != null && loadedWorlds.contains(worldSave)) {
+        if (worldSave.world() == null) {
+            player.sendMessage(Component.text("World does not exist!"));
+            return;
+        }
+
+        if (loadedWorlds.contains(worldSave)) {
             player.sendMessage(Component.text("World is already loaded!"));
             return;
         }
 
         String worldName = worldSave.world().getName();
 
-
         File sourceFolder = new File(Bukkit.getWorldContainer(), "Unloaded" + File.separator + worldName);
         if (!sourceFolder.exists()) {
-            player.sendMessage(Component.text("World does not exist in the 'Unloaded' directory."));
-            Bukkit.getLogger().severe("World " + worldName + " does not exist in the 'Unloaded' directory.");
+            player.sendMessage(Component.text("World " + worldName + " does not exist in the 'Unloaded' directory."));
             return;
         }
 
@@ -172,7 +174,7 @@ public class WorldHandler {
         }
 
         for (WorldSave saves : loadedWorlds) {
-            if (saves.world().equals(worldSave)) {
+            if (saves.equals(worldSave)) {
                 player.sendMessage(Component.text("World must be unloaded before deletion."));
                 return;
             }
@@ -304,7 +306,6 @@ public class WorldHandler {
                 if (worldUUID.equals(worldSave.world().getUID().toString())) {
                     GUI.remove(item);
                     MainGUI.originalWorldItems.remove(item);
-                    //Check this line
                     return;
                 }
             }

@@ -12,7 +12,6 @@ import dev.joeyfoxo.worldManagement.worlds.WorldSave;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,10 +20,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataType;
 
 import static dev.joeyfoxo.worldManagement.util.Util.getWorldUIDFromMeta;
-import static dev.joeyfoxo.worldManagement.util.Util.insufficientPermission;
 
 public class PlayerEvents implements Listener {
 

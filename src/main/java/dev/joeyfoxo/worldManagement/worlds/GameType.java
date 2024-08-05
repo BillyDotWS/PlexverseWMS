@@ -2,7 +2,6 @@ package dev.joeyfoxo.worldManagement.worlds;
 
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
 
 public enum GameType {
 
