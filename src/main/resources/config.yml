@@ -1,0 +1,7 @@
+useWMSItem: "wms.use"
+openWMSGUI: "wms.open"
+loadWMSWorld: "wms.load"
+unloadWMSWorld: "wms.unload"
+createWMSWorld: "wms.create"
+deleteWMSWorld: "wms.delete"
+importWMSWorld: "wms.import"

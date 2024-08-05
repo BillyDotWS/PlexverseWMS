@@ -1,0 +1,7 @@
+name: WorldManagement
+version: '1.0'
+main: dev.joeyfoxo.worldManagement.WorldManagement
+website: 'https://joeyfox.dev'
+authors:
+  - JoeyFoxo
+api-version: '1.21'
